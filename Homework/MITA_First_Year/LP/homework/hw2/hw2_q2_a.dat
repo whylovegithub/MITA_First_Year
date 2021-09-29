@@ -1,0 +1,18 @@
+set PRODS :=soldiers birdtables chairs;
+
+param manhrs_avail:=7000;
+param machhrs_avail:=2500;
+param space_avail:=600;
+
+param manhrs_req := soldiers 5
+					birdtables 3
+					chairs 9;
+param machhrs_req := soldiers 4
+					birdtables 2
+					chairs 6;
+param space_req := soldiers 0
+					birdtables 1
+					chairs 1;
+param revenue := soldiers 20
+					birdtables 30
+					chairs 30;

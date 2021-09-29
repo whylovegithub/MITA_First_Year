@@ -1,0 +1,16 @@
+set SHOES :=men women children;
+set SUB_SHOES :=women;
+
+param mt_avail := 800;
+
+param labor_avail := 2000;
+
+param mt_req := men 1.5
+					women 2
+					children 1;
+param labor_req := men 2.5
+					women 6
+					children 1.5;
+param profit := men 26
+					women 56
+					children 14;

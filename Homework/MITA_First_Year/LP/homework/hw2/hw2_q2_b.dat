@@ -1,0 +1,27 @@
+set PRODS :=soldiers birdtables chairs tables;
+
+#extra labor 7000+2000
+param manhrs_avail := 9000;
+#extra machine time 2500+500
+param machhrs_avail := 3000;
+#extra space 600+200
+param space_avail := 800;
+
+#different conditions for table making and different revenue	
+
+param manhrs_req := soldiers 5
+					birdtables 3
+					chairs 9
+					tables 7;
+param machhrs_req := soldiers 4
+					birdtables 2
+					chairs 6
+					tables 5;
+param space_req := soldiers 0
+					birdtables 1
+					chairs 1
+					tables 1.5;
+param revenue := soldiers 20
+					birdtables 30
+					chairs 30
+					tables 60;
