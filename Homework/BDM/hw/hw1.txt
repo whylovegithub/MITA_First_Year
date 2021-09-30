@@ -1,0 +1,8 @@
+1. There are 7 records and 5 fields per record.
+2. (1)The detail of the MANAGER_ADDRESS are concluded, and the value of city was in it. It is not convinent to get the value since the length of the stree and the number of strees varies from city to city. Secondly, we could use string match the first "," and the second "," , and get the value between the two comma. It is feasible in this file since there are few records but would costs unnecessary computer time.
+(2)We can split the MANAGER_ADDRESS to sevreal columns -- ST_NUM, ST, CITY, STATE, ZIP.
+3.(1)PROJECT_MANAGER, MANAGER_PHONE, MANAGER_ADDRESS.
+(2)If the manager change phone number or appartment and forget to report or the update of the list's all the record, could end up database anomalies. Same for other circumstances, such as the manager resigned or the project was assigned a new manager.
+4.	PROJ_CODE, PROJ_NAME, EMP_NUM, EMP_NAME, JOB_CODE, JOB_CHG_HOUR, EMP_PHONE. There various data redundancy could lead to the burden of the database capasity. And the relationship between employees and project is M:N, which is not acceptable by mordan relationship database.
+5.	We should create another table in between to help transfer the M:N relationship to 1:M:1
+6.	1:1 person:SSN, 1:N employer:employee, M:N studet:class
