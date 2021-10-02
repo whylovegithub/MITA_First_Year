@@ -1,0 +1,52 @@
+1.	There are 7 records and 5 fields per record.
+2. 
+(1)The detail of the MANAGER_ADDRESS are concluded, and the value of city was in it. It is not convinent to get the value since the length of the stree and the number of strees varies from city to city. Secondly, we could use string match the first "," and the second "," , and get the value between the two comma. It is feasible in this file since there are few records but would costs unnecessary computer time.
+(2)We can split the MANAGER_ADDRESS to sevreal columns -- ST_NUM, ST, CITY, STATE, ZIP.
+3.
+(1)PROJECT_MANAGER, MANAGER_PHONE, MANAGER_ADDRESS.
+(2)If the manager change phone number or appartment and forget to report or the update of the list's all the record, could end up database anomalies. Same for other circumstances, such as the manager resigned or the project was assigned a new manager.
+4.	PROJ_CODE, PROJ_NAME, EMP_NUM, EMP_NAME, JOB_CODE, JOB_CHG_HOUR, EMP_PHONE. There various data redundancy could lead to the burden of the database capasity. And the relationship between employees and project is M:N, which is not acceptable by mordan relationship database.
+5.	We should create another table in between to help transfer the M:N relationship to 1:M:1
+6.	1:1 person:SSN, 1:N employer:employee, M:N studet:class
+7.	REGION STORE EMPLOYEE JOB
+REGION-STORE - 1:M, STORE-EMPLOYEE - 1:M, EMPLOYEE-JOB - 1:M
+8.	
+[1]	A region contains at least one or more stores.
+Region must have a "REGION_CODE" attribute.
+Region should contain a descript.
+REGION_CODE is a foreign key.
+[2] A store must have a "STORE_CODE" attribute.
+A store must belong to one and only one region.
+A store contains at least one or more employees.
+STORE_CODE is a foreign key.
+[3]	Employee must have a "EMP_CODE" attribute.
+"Title" indicates the employee's position in the company.
+A employee must belong to one and only one store which presented by the store code.
+Employee has a job code to show his job type in the store.
+Employee can only has one job type.
+job code is a foreign key.
+[4]job must have a "JOB_CODE" attribute.
+job must hava a base payment.
+9.(1) All the relationship between entities are weak relationships.
+[1] A publisher contain a attribute "p_id" as a primary key.
+A publisher has other attributes such as "p_address", "p_phone", "p_fax", "p_name", etc.
+
+[2]	A book contain a attribute "ISBN" as a primary key.
+A book has other attributes such as "b_name", "b_category", "a_id", "p_id",etc.
+"a_id", "p_id" are foreign keys.
+The value of "a_id", "p_id" must no be empty. 
+A book has one and only one author and publisher.
+
+[3]	A author contain a attribute "a_id" as a primary key.
+A autho has other attributes such as "a_lname", "a_fname"
+[4]	A contract contain a attribute "c_id" as a primary key.
+A contract has other attributes such as "a_id", "p_id", "c_price", "c_s_date",etc.
+"a_id", "p_id" are foreign keys.
+The value of "a_id", "p_id" must no be empty. 
+(2)
+[1] A book can be published by sevreal publisheres, and written by several authors.
+[2] Since the reason given by [1], the contracts could have more than one publisher and it is a M:N relationship. It can not be handled by the modern relationship database,in order to do so, wo shuold invole another table called submission to covert the M:N to 2 1:M relationship. Same as the tables of contract and author.
+
+
+
+
