@@ -27,7 +27,7 @@ Employee can only has one job type.
 job code is a foreign key.
 [4]job must have a "JOB_CODE" attribute.
 job must hava a base payment.
-9.(1) All the relationship between entities are weak relationships.
+9.(1) All the relationships between entities are weak relationships.
 [1] A publisher contain a attribute "p_id" as a primary key.
 A publisher has other attributes such as "p_address", "p_phone", "p_fax", "p_name", etc.
 
@@ -45,7 +45,7 @@ A contract has other attributes such as "a_id", "p_id", "c_price", "c_s_date",et
 The value of "a_id", "p_id" must no be empty. 
 (2)
 [1] A book can be published by sevreal publisheres, and written by several authors.
-[2] Since the reason given by [1], the contracts could have more than one publisher and it is a M:N relationship. It can not be handled by the modern relationship database,in order to do so, wo shuold invole another table called submission to covert the M:N to 2 1:M relationship. Same as the tables of contract and author.
+[2] Since the reason given by [1], the contracts could have more than one publisher and it is a M:N relationship. It can not be handled by the modern relationship database,in order to do so, we shuold involve another table called submission to covert the M:N to 2 1:M relationship. Same as the tables of contract and author.
 
 
 
