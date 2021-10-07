@@ -1,4 +1,4 @@
-Covid <- read.csv("C:/Users/whylo/Desktop/Homework/ABI/hw2/Covid.csv")
+Covid <- read.csv("/Users/ouhiroshisakai/Desktop/MITA_First_Year/ABI/hw/hw2/Covid.csv")
 covid<-Covid
 
 #summary the dataset
@@ -9,7 +9,9 @@ names(covid)[names(covid) == "Total.Deaths"] <- "TD"
 names(covid)[names(covid) == "Age.Group"] <- "AG"
 names(covid)[names(covid) == "Group"] <- "G"
 
-
+library("sqldf")
+library("RSQLite")
+library("tcltk2")
 Covid_njfl<-sqldf("select Month, State, CD, TD 
                    from covid 
                    where G = 'By Month' and Sex ='All Sexes' and AG='All Ages' and State IN ('New Jersey','Florida')")
