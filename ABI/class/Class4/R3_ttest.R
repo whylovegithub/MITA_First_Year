@@ -32,7 +32,7 @@ legend("topright", c("df = 4", "df = 6", "df = 8", "df = 10", "df = 1000"), col 
 # Call a library
 library(dplyr) 
 
-auto<-Auto.3
+auto<-`Auto.3.(1)`
 # read Auto data
 summary(auto)
 
@@ -74,6 +74,8 @@ plot(auto_omit$cylinders , auto_omit$mpg,main="Car Auto Data",
 table(auto_omit$cylinders)              ### different # cars for 4 and 6 cylinders
 
 auto.df <- data.frame(auto_omit)
+#The function data.frame() creates data frames, tightly coupled collections of variables which share many 
+#of the properties of matrices and of lists, used as the fundamental data structure by most of R's modeling software.
 head(auto.df)
 names(auto.df)
 

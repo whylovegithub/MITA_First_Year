@@ -25,7 +25,7 @@
       <connection class='federated'>
         <named-connections>
           <named-connection caption='Homework Assignment1 Dataset' name='excel-direct.1n4ra5r0abgu6e1a4qz7q0efj6ju'>
-            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/whylo/Desktop/MITA_First_Year/DAV/Homework Assignment1 Dataset.xlsx' interpretationMode='0' password='' server='' validate='no' />
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/whylo/Desktop/MITA_First_Year/DAV/hw1/Homework Assignment1 Dataset.xlsx' interpretationMode='0' password='' server='' validate='no' />
           </named-connection>
         </named-connections>
         <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='excel-direct.1n4ra5r0abgu6e1a4qz7q0efj6ju' name='Titanic' table='[Titanic$]' type='table'>
@@ -252,7 +252,7 @@
       <connection class='federated'>
         <named-connections>
           <named-connection caption='Homework Assignment1 Dataset' name='excel-direct.0mzolnu0ey1b6j1a553ih0fyy098'>
-            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/whylo/Desktop/MITA_First_Year/DAV/Homework Assignment1 Dataset.xlsx' interpretationMode='0' password='' server='' validate='no' />
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/whylo/Desktop/MITA_First_Year/DAV/hw1/Homework Assignment1 Dataset.xlsx' interpretationMode='0' password='' server='' validate='no' />
           </named-connection>
         </named-connections>
         <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='excel-direct.0mzolnu0ey1b6j1a553ih0fyy098' name='Titanic' table='[Titanic$]' type='table'>
@@ -541,6 +541,21 @@
         <calculation class='categorical-bin' column='[Pclass]' new-bin='true' />
       </column>
       <column datatype='integer' name='[Pclass]' role='measure' type='quantitative' />
+      <column datatype='string' name='[Siblings/Spouses Aboard (group) 1]' role='dimension' type='ordinal'>
+        <calculation class='categorical-bin' column='[Siblings/Spouses Aboard]' new-bin='true'>
+          <bin default-name='false' value='&quot;nssa&quot;'>
+            <value>0</value>
+          </bin>
+          <bin default-name='false' value='&quot;ssa&quot;'>
+            <value>1</value>
+            <value>2</value>
+            <value>3</value>
+            <value>4</value>
+            <value>5</value>
+            <value>8</value>
+          </bin>
+        </calculation>
+      </column>
       <column datatype='string' name='[Siblings/Spouses Aboard (group)]' role='dimension' type='nominal'>
         <calculation class='categorical-bin' column='[Siblings/Spouses Aboard]' new-bin='true' />
       </column>
@@ -550,6 +565,103 @@
       </column>
       <column datatype='integer' name='[Survived]' role='measure' type='quantitative' />
       <_.fcp.ObjectModelTableType.true...column caption='Titanic' datatype='table' name='[__tableau_internal_object_id__].[Titanic_5CEB790546D8432B92E50F0E23090A93]' role='measure' type='quantitative' />
+      <column datatype='string' name='[ag]' role='dimension' type='ordinal'>
+        <calculation class='categorical-bin' column='[Age]' new-bin='true'>
+          <bin default-name='false' value='&quot;&lt;=18&quot;'>
+            <value>0.41999999999999998</value>
+            <value>0.67000000000000004</value>
+            <value>0.75</value>
+            <value>0.82999999999999996</value>
+            <value>0.92000000000000004</value>
+            <value>1.0</value>
+            <value>2.0</value>
+            <value>3.0</value>
+            <value>4.0</value>
+            <value>5.0</value>
+            <value>6.0</value>
+            <value>7.0</value>
+            <value>8.0</value>
+            <value>9.0</value>
+            <value>10.0</value>
+            <value>11.0</value>
+            <value>12.0</value>
+            <value>13.0</value>
+            <value>14.0</value>
+            <value>14.5</value>
+            <value>15.0</value>
+            <value>16.0</value>
+            <value>17.0</value>
+            <value>18.0</value>
+          </bin>
+          <bin default-name='false' value='&quot;&gt;18&quot;'>
+            <value>19.0</value>
+            <value>20.0</value>
+            <value>20.5</value>
+            <value>21.0</value>
+            <value>22.0</value>
+            <value>23.0</value>
+            <value>23.5</value>
+            <value>24.0</value>
+            <value>24.5</value>
+            <value>25.0</value>
+            <value>26.0</value>
+            <value>27.0</value>
+            <value>28.0</value>
+            <value>28.5</value>
+            <value>29.0</value>
+            <value>30.0</value>
+            <value>30.5</value>
+            <value>31.0</value>
+            <value>32.0</value>
+            <value>32.5</value>
+            <value>33.0</value>
+            <value>34.0</value>
+            <value>34.5</value>
+            <value>35.0</value>
+            <value>36.0</value>
+            <value>36.5</value>
+            <value>37.0</value>
+            <value>38.0</value>
+            <value>39.0</value>
+            <value>40.0</value>
+            <value>40.5</value>
+            <value>41.0</value>
+            <value>42.0</value>
+            <value>43.0</value>
+            <value>44.0</value>
+            <value>45.0</value>
+            <value>45.5</value>
+            <value>46.0</value>
+            <value>47.0</value>
+            <value>48.0</value>
+            <value>49.0</value>
+            <value>50.0</value>
+            <value>51.0</value>
+            <value>52.0</value>
+            <value>53.0</value>
+            <value>54.0</value>
+            <value>55.0</value>
+            <value>55.5</value>
+            <value>56.0</value>
+            <value>57.0</value>
+            <value>58.0</value>
+            <value>59.0</value>
+            <value>60.0</value>
+            <value>61.0</value>
+            <value>62.0</value>
+            <value>63.0</value>
+            <value>64.0</value>
+            <value>65.0</value>
+            <value>66.0</value>
+            <value>69.0</value>
+            <value>70.0</value>
+            <value>70.5</value>
+            <value>71.0</value>
+            <value>74.0</value>
+            <value>80.0</value>
+          </bin>
+        </calculation>
+      </column>
       <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
       <semantic-values>
         <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
@@ -1209,6 +1321,154 @@
         </show-full-range>
       </table>
       <simple-id uuid='{1A4083AD-E0FE-4638-9F09-98642F1F3A6C}' />
+    </worksheet>
+    <worksheet name='The # of survivedgroup by age(adult or not) and has ssa(siblings/sibling aboard)or not'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Titanic (Homework Assignment1 Dataset)' name='federated.0u873241hnjgkk154o2yp1smevb1' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0u873241hnjgkk154o2yp1smevb1'>
+            <column datatype='real' name='[Age]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Siblings/Spouses Aboard (group) 1]' role='dimension' type='ordinal'>
+              <calculation class='categorical-bin' column='[Siblings/Spouses Aboard]' new-bin='true'>
+                <bin default-name='false' value='&quot;nssa&quot;'>
+                  <value>0</value>
+                </bin>
+                <bin default-name='false' value='&quot;ssa&quot;'>
+                  <value>1</value>
+                  <value>2</value>
+                  <value>3</value>
+                  <value>4</value>
+                  <value>5</value>
+                  <value>8</value>
+                </bin>
+              </calculation>
+            </column>
+            <column datatype='integer' name='[Siblings/Spouses Aboard]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Survived (group)]' role='dimension' type='nominal'>
+              <calculation class='categorical-bin' column='[Survived]' new-bin='true' />
+            </column>
+            <_.fcp.ObjectModelTableType.false...column caption='Titanic' datatype='integer' name='[__tableau_internal_object_id__].[Titanic_5CEB790546D8432B92E50F0E23090A93]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Survived]' role='measure' type='quantitative' />
+            <_.fcp.ObjectModelTableType.true...column caption='Titanic' datatype='table' name='[__tableau_internal_object_id__].[Titanic_5CEB790546D8432B92E50F0E23090A93]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[Titanic_5CEB790546D8432B92E50F0E23090A93]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:Titanic_5CEB790546D8432B92E50F0E23090A93:qk]' pivot='key' type='quantitative' />
+            <column datatype='string' name='[ag]' role='dimension' type='ordinal'>
+              <calculation class='categorical-bin' column='[Age]' new-bin='true'>
+                <bin default-name='false' value='&quot;&lt;=18&quot;'>
+                  <value>0.41999999999999998</value>
+                  <value>0.67000000000000004</value>
+                  <value>0.75</value>
+                  <value>0.82999999999999996</value>
+                  <value>0.92000000000000004</value>
+                  <value>1.0</value>
+                  <value>2.0</value>
+                  <value>3.0</value>
+                  <value>4.0</value>
+                  <value>5.0</value>
+                  <value>6.0</value>
+                  <value>7.0</value>
+                  <value>8.0</value>
+                  <value>9.0</value>
+                  <value>10.0</value>
+                  <value>11.0</value>
+                  <value>12.0</value>
+                  <value>13.0</value>
+                  <value>14.0</value>
+                  <value>14.5</value>
+                  <value>15.0</value>
+                  <value>16.0</value>
+                  <value>17.0</value>
+                  <value>18.0</value>
+                </bin>
+                <bin default-name='false' value='&quot;&gt;18&quot;'>
+                  <value>19.0</value>
+                  <value>20.0</value>
+                  <value>20.5</value>
+                  <value>21.0</value>
+                  <value>22.0</value>
+                  <value>23.0</value>
+                  <value>23.5</value>
+                  <value>24.0</value>
+                  <value>24.5</value>
+                  <value>25.0</value>
+                  <value>26.0</value>
+                  <value>27.0</value>
+                  <value>28.0</value>
+                  <value>28.5</value>
+                  <value>29.0</value>
+                  <value>30.0</value>
+                  <value>30.5</value>
+                  <value>31.0</value>
+                  <value>32.0</value>
+                  <value>32.5</value>
+                  <value>33.0</value>
+                  <value>34.0</value>
+                  <value>34.5</value>
+                  <value>35.0</value>
+                  <value>36.0</value>
+                  <value>36.5</value>
+                  <value>37.0</value>
+                  <value>38.0</value>
+                  <value>39.0</value>
+                  <value>40.0</value>
+                  <value>40.5</value>
+                  <value>41.0</value>
+                  <value>42.0</value>
+                  <value>43.0</value>
+                  <value>44.0</value>
+                  <value>45.0</value>
+                  <value>45.5</value>
+                  <value>46.0</value>
+                  <value>47.0</value>
+                  <value>48.0</value>
+                  <value>49.0</value>
+                  <value>50.0</value>
+                  <value>51.0</value>
+                  <value>52.0</value>
+                  <value>53.0</value>
+                  <value>54.0</value>
+                  <value>55.0</value>
+                  <value>55.5</value>
+                  <value>56.0</value>
+                  <value>57.0</value>
+                  <value>58.0</value>
+                  <value>59.0</value>
+                  <value>60.0</value>
+                  <value>61.0</value>
+                  <value>62.0</value>
+                  <value>63.0</value>
+                  <value>64.0</value>
+                  <value>65.0</value>
+                  <value>66.0</value>
+                  <value>69.0</value>
+                  <value>70.0</value>
+                  <value>70.5</value>
+                  <value>71.0</value>
+                  <value>74.0</value>
+                  <value>80.0</value>
+                </bin>
+              </calculation>
+            </column>
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0u873241hnjgkk154o2yp1smevb1].[Survived (group)]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0u873241hnjgkk154o2yp1smevb1].[__tableau_internal_object_id__].[cnt:Titanic_5CEB790546D8432B92E50F0E23090A93:qk]</rows>
+        <cols>([federated.0u873241hnjgkk154o2yp1smevb1].[Siblings/Spouses Aboard (group) 1] / ([federated.0u873241hnjgkk154o2yp1smevb1].[ag] / [federated.0u873241hnjgkk154o2yp1smevb1].[Survived (group)]))</cols>
+      </table>
+      <simple-id uuid='{BED45908-79D6-4B06-BC70-6D32D7E45B4A}' />
     </worksheet>
     <worksheet name='The survived people&apos;s treemap based on different class and siblings/spouses aboard'>
       <table>
@@ -2894,7 +3154,7 @@
       </viewpoint>
       <simple-id uuid='{C858076B-295E-4BBF-9C8A-0A3D1D8BC88D}' />
     </window>
-    <window class='worksheet' maximized='true' name='the relationship between fare, class and age'>
+    <window class='worksheet' name='the relationship between fare, class and age'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -3002,6 +3262,44 @@
         </highlight>
       </viewpoint>
       <simple-id uuid='{D404A4E7-7391-4E5A-9005-FFDD45D8E0CF}' />
+    </window>
+    <window class='worksheet' maximized='true' name='The # of survivedgroup by age(adult or not) and has ssa(siblings/sibling aboard)or not'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0u873241hnjgkk154o2yp1smevb1].[Survived (group)]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0u873241hnjgkk154o2yp1smevb1].[Siblings/Spouses Aboard (group) 1]</field>
+            <field>[federated.0u873241hnjgkk154o2yp1smevb1].[Siblings/Spouses Aboard (group)]</field>
+            <field>[federated.0u873241hnjgkk154o2yp1smevb1].[Survived (group)]</field>
+            <field>[federated.0u873241hnjgkk154o2yp1smevb1].[ag]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{400F3446-FDCB-423F-883B-69C1E59B320E}' />
     </window>
   </windows>
   <thumbnails>
@@ -5017,6 +5315,96 @@
       MRQgGgVDM9B1/erfN4zxKmIxGSAWL9d/PeLKNAmHw5/ZlPABaBqMH8Pj8wBM7DjsGhpgmCYm
       JmDBZrOiWcaXXrfesJQ6N90mbg2rNUG+13KTOREJH4A71Yn3ZDe+igLc0U4uDLuY43YxGDMY
       6+sjlplFb28/eiwTp+3GAAzD+KtRiFtD0xIkAG58I/x/TgitSXqLrYcAAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='The # of survivedgroup by age(adult or not) and has ssa(siblings/sibling aboard)or not' width='192'>
+      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
+      Svt/97IdXt68VhsAAAAASUVORK5CYII=
     </thumbnail>
     <thumbnail height='192' name='The survived people&apos;s treemap based on different class and siblings/spouses aboard' width='192'>
       iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
