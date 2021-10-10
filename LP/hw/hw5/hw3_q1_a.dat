@@ -1,0 +1,17 @@
+set PRODS := bits bots;
+set WORKT := normal ovetime;
+set T := 0 1;
+set T_0 := 0;
+set T_1 := 1;
+
+param cp := bits 20
+            bots 24;
+param km := normal 8
+            ovetime 12;
+param am := normal 1400
+            ovetime 440;
+param dpt :=
+        bits 0 40   bits 1 20
+        bots 0 24   bots 1 56;
+param rp := bits 7
+            bots 16.25;

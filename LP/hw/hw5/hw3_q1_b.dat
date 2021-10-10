@@ -1,0 +1,28 @@
+set PRODS := bads bens bits bobs bugs;
+set WORKT := normal ovetime;
+set T := 0 1 2 3;
+set T_0 := 0;
+set T_0_3 := 0 1 2;
+set T_4 := 3;
+
+param cp := bads 0
+            bens 1.5
+            bits 5
+            bobs 8
+            bugs 3;
+param km := normal 2
+            ovetime 3;
+param am := normal 1300
+            ovetime 400;
+param dpt :=
+            bads 0 20 bads 1 15 bads 2 10 bads 3 0
+            bens 0 6 bens 1 0 bens 2 0 bens 3 7
+            bits 0 40 bits 1 20 bits 2 10 bits 3 5
+            bobs 0 24 bobs 1 56 bobs 2 68 bobs 3 80
+            bugs 0 36 bugs 1 100 bugs 2 90 bugs 3 30;
+param rp := 
+            bads 4
+            bens 8.5
+            bits 7
+            bobs 16.25
+            bugs 1;
