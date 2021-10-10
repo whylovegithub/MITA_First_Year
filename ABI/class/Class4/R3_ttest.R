@@ -102,10 +102,11 @@ auto_omit$cylinders == 4,c(auto_omit$cylinders,auto_omit$mpg))
 #################Boston  #############
 
 ?Boston             # medv - median value of owner-occupied homes in \$1000s.
-
+library(MASS)
 dim(Boston)
 summary(Boston)
 
+Boston
 corrplot.mixed(cor(Boston), order = 'AOE')  #lstat (pct lower status population) and rm (average # rooms per dwelling have the highest linear association 
 
 Boston$chas <- as.factor(Boston$chas)
