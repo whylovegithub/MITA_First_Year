@@ -45,6 +45,92 @@ auto_omit <- na.omit(auto)
 dim(auto_omit)
 summary(auto_omit)
 
+auto_omit$w2<-auto_omit$weight*auto_omit$weight
+lm.fit2=lm(auto_omit$mpg~auto_omit$w2+auto_omit$weight)
+summary(lm.fit2)
+plot(lm.fit2)
+#cook distance
+
+
+auto_omit$w3<-log(auto_omit$weight)
+lm.fit3=lm(auto_omit$mpg~auto_omit$w3)
+summary(lm.fit3)
+plot(lm.fit3) 
+
+auto_omit$dis2<-auto_omit$displacement*auto_omit$displacement
+lm.fit4=lm(auto_omit$mpg~auto_omit$w3+auto_omit$displacement+auto_omit$dis2)
+summary(lm.fit4)
+plot(lm.fit4) 
+
+lm.fit5=lm(auto_omit$mpg~auto_omit$w3+auto_omit$displacement+auto_omit$dis2+poly(auto_omit$horsepower,3))
+summary(lm.fit5)
+plot(lm.fit5) 
+
+lm.fit5=lm(auto_omit$mpg~auto_omit$w3+auto_omit$displacement+auto_omit$dis2+poly(auto_omit$horsepower,2))
+summary(lm.fit5)
+plot(lm.fit5) 
+#add
+lm.fit6=lm(auto_omit$mpg~auto_omit$w3+auto_omit$displacement+auto_omit$dis2+poly(auto_omit$horsepower,2)+poly(auto_omit$acceleration,5))
+summary(lm.fit6)
+plot(lm.fit6) 
+lm.fit6=lm(auto_omit$mpg~auto_omit$w3+auto_omit$displacement+auto_omit$dis2+poly(auto_omit$horsepower,2)+poly(auto_omit$acceleration,3))
+summary(lm.fit6)
+plot(lm.fit6) 
+
+#get the acc2 out the system
+auto_omit$acc3 <- auto_omit$acceleration*auto_omit$acceleration*auto_omit$acceleration
+
+lm.fit7=lm(auto_omit$mpg~auto_omit$w3+auto_omit$displacement+auto_omit$dis2+poly(auto_omit$horsepower,2)+auto_omit$acceleration+auto_omit$acc3)
+summary(lm.fit7)
+plot(lm.fit7)
+#kick acc3
+lm.fit8=lm(auto_omit$mpg~auto_omit$w3+auto_omit$displacement+auto_omit$dis2+poly(auto_omit$horsepower,2)+auto_omit$acceleration)
+summary(lm.fit8)
+plot(lm.fit8)
+
+lm.fit9=lm(auto_omit$mpg~auto_omit$year+auto_omit$displacement+auto_omit$dis2+poly(auto_omit$horsepower,2)+auto_omit$acceleration)
+summary(lm.fit9)
+plot(lm.fit9)
+######################################################
+#                  step forward                      #
+######################################################
+min.model = lm(mpg  ~ 1, data = auto_omit)
+summary(min.model)
+
+m.best.forward = step(min.model, direction='forward',
+                      scope=(mpg ~weight +weight2+log(weight) + displacement+displacement2+displacement3+displacement4+displacement5 +log(displacement) 
+                               + horsepower+horsepower2+horsepower3+horsepower4+horsepower5+log(horsepower) +
+                               acceleration +acceleration2 +acceleration3 +acceleration4 +acceleration5 +log(acceleration) +
+                               weight*horsepower), 
+                      test = 'F', trace=T)
+summary(m.best.forward)
+plot(m.best.forward)
+#######################################################
+
+
+
+
+
+
+
+#Boston.df$rm2<-Boston.df$rm*Boston.df$rm
+#lm.fit_2=lm(Boston.df$medv~Boston.df$rm2)
+#summary(lm.fit_2)
+#plot(Boston.df$medv~Boston.df$rm2)
+#abline(lm.fit_2,lwd=3,col="red")
+
+
+
+
+
+
+
+
+
+
+
+
+
 lapply(auto_omit,is.numeric)
 unlist(lapply(auto_omit,is.numeric))
 
