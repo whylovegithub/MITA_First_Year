@@ -1,0 +1,17 @@
+,Bacteria,Penicilin,Streptomycin,Neomycin,Gram Staining,PenicilinL,StreptomycinL,NeomycinL,MDS _x,MDS_y,BestAntibiotic,BestAntibioticAbbr
+0,Aerobacter aerogenes,870,1,1.6,negative,2.939519253,0,0.204119983,1.019233393,-2.868989329,Streptomycin,S
+1,Brucella abortus,1,2,0.02,negative,0,0.301029996,-1.698970004,-0.558366995,0.178641292,Neomycin,N
+2,Brucella anthracis,0.001,0.01,0.007,positive,-3,-2,-2.15490196,-2.209894673,3.192520582,Penicilin,P
+3,Diplococcus pneumoniae,0.005,11,10,positive,-2.301029996,1.041392685,1,2.059121093,2.40713521,Penicilin,P
+4,Escherichia coli,100,0.4,0.1,negative,2,-0.397940009,-1,-0.275376622,-1.966783179,Neomycin,N
+5,Klebsiella pneumoniae,850,1.2,1,negative,2.929418926,0.079181246,0,0.845894091,-2.866579266,Neomycin,N
+6,Mycobacterium tuberculosis,800,5,2,negative,2.903089987,0.698970004,0.301029996,1.4326147,-2.830722997,Neomycin,N
+7,Proteus vulgaris,3,0.1,0.1,negative,0.477121255,-1,-1,-0.833943156,-0.621891408,Streptomycin,S
+8,Pseudomonas aeruginosa,850,2,0.4,negative,2.929418926,0.301029996,-0.397940009,0.510536474,-2.900092243,Neomycin,N
+9,Salmonella (Eberthella) typhosa,1,0.4,0.008,negative,0,-0.397940009,-2.096910013,-1.311186597,0.066189738,Neomycin,N
+10,Salmonella schottmuelleri,10,0.8,0.09,negative,1,-0.096910013,-1.045757491,-0.121261069,-0.937416907,Neomycin,N
+11,Staphylococcus albus,0.007,0.1,0.001,positive,-2.15490196,-1,-3,-2.481939115,2.099990732,Neomycin,N
+12,Staphylococcus aureus,0.03,0.03,0.001,positive,-1.522878745,-1.522878745,-3,-2.715521122,1.479363694,Neomycin,N
+13,Streptococcus fecalis,1,1,0.1,positive,0,0,-1,-0.064309863,0.065072013,Neomycin,N
+14,Streptococcus hemolyticus,0.001,14,10,positive,-3,1.146128036,1,2.101044223,3.111483951,Penicilin,P
+15,Streptococcus viridans,0.005,10,40,positive,-2.301029996,1,1.602059991,2.603355237,2.392078118,Penicilin,P
