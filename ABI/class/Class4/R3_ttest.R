@@ -197,7 +197,7 @@ corrplot.mixed(cor(Boston), order = 'AOE')  #lstat (pct lower status population)
 
 Boston$chas <- as.factor(Boston$chas)
 
-plot(Boston$chas ,Boston$medv,main="Boston Neighbourhoods median value homes on or off river Charles",
+plot(Boston$lstat ,Boston$medv,main="Boston Neighbourhoods median value homes on or off river Charles",
      xlab="Off or on river Charles", ylab="Medium Value owned homes" )
 
 Boston.df <- data.frame(Boston)
@@ -227,7 +227,7 @@ summary(lm.fit_auto)
 coef(lm.fit_auto)
 confint(lm.fit_auto)
 
-plot(auto_omit$weight,auto_omit$mpg,main = "Scatterplot MPG and Weight",xlab="Weight", ylab="MPG")
+plot(Boston$medv,Boston$lstat,,main = "Scatterplot MPG and Weight",xlab="Weight", ylab="MPG")
 abline(lm.fit_auto,lwd=3,col="red")
 
 plot(auto_omit$weight, residuals(lm.fit_auto), main = "Residuals of Weight and MPG",xlab="Weight", ylab="Residuals")
@@ -293,12 +293,14 @@ lm.fit_try=lm(mpg~.-cylinders-horsepower-acceleration+weight2-displacement,data=
 summary(lm.fit_try);
 
 #Add quadratics
-lm.fitall7=lm(mpg~displacement+horsepower + weight+acceleration+weight2+dis2,data=auto_omit)
+lm.fitall7=lm(
+  medv   ~ lstat  ,Boston)
 summary(lm.fitall7)
 plot(lm.fitall7)
 
+nox2=Boston$nox*Boston$nox
 #Remove non significant variables
-lm.fitall8=lm(mpg~displacement+horsepower + weight+weight2+dis2,data=auto_omit)
+lm.fitall8=lm(Boston$medv~log(Boston$ptratio) + log(Boston$dis) + Boston$black)
 summary(lm.fitall8)
 plot(lm.fitall8)
 
