@@ -32,7 +32,7 @@ legend("topright", c("df = 4", "df = 6", "df = 8", "df = 10", "df = 1000"), col 
 # Call a library
 library(dplyr) 
 
-auto<-`Auto.3.(1)`
+auto<-`Auto.3`
 # read Auto data
 summary(auto)
 
@@ -179,6 +179,12 @@ t.test(auto.df.4$mpg, mu = 0)   #Null hypothesis Mean is equal to zero
                                 #alternative hypothesys the mean is not equal to 0
 
 t.test(auto.df.4$mpg,auto.df.6$mpg)
+rm2=Boston$rm*Boston$rm
+a =lm(Boston$lstat +Boston$rm + Boston$rm2 +Boston$log(ptratio))
+plot(a)
+summary(a)
+
+summary(step(a))
 
 
 auto_4 <- subset(rows=auto_omit$cylinders == 4, data=auto_omit)
