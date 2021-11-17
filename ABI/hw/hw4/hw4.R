@@ -4,7 +4,6 @@ library(corrplot)
 library(fastDummies)
 library(sjstats)
 library(class)
-library(MASS)
 library(ROCR)
 
 ad = Advertisement_State
@@ -24,7 +23,7 @@ ad$month = date$month
 #create season
 ad$quarter=0
 ad
-for(i in 1:nrow(ad.df)) {
+for(i in 1:nrow(ad)) {
   row <- ad[i,]
   if(ad[i,]$month == 1 || ad[i,]$month == 2 ||ad[i,]$month == 3){
     ad[i,]$quarter =1
@@ -46,7 +45,7 @@ ad$news_add=0
 ad[1,]$tv_add = ad[1,]$TV_State/1.5
 ad[1,]$radio_add = ad[1,]$Radio_State/1.5
 ad[1,]$news_add= ad[1,]$News_State/1.5
-for(i in 2:nrow(ad.df)) {
+for(i in 2:nrow(ad)) {
   row <- ad[i,]
   ad[i,]$tv_add = (ad[i,]$TV_State+0.5*ad[i-1,]$TV_State)/1.5
   ad[i,]$radio_add = (ad[i,]$Radio_State+0.5*ad[i-1,]$Radio_State)/1.5
@@ -75,7 +74,7 @@ ad.df <- dummy_state
 dim(ad.df)
 
 
-write.csv(ad.df,"C:\\Users\\whylo\\Desktop\\MITA_First_Year\\ABI\\hw\\hw4\\ad.df.csv", row.names = TRUE)
+##write.csv(ad.df,"C:\\Users\\whylo\\Desktop\\MITA_First_Year\\ABI\\hw\\hw4\\ad.df.csv", row.names = TRUE)
 ad.df.train <- subset(ad.df,year<=2018)
 head(ad.df.train)
 dim(ad.df.train)
