@@ -10,6 +10,7 @@ data(Pima.te)
 ?Pima.te
 summary(Pima.te)
 adim(Pima.te)
+write.csv(Pima.te.df, "Pima.csv ")
 
 #split the set to training and testing
 Pima.te.df = Pima.te
