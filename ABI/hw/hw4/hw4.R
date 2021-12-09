@@ -5,6 +5,7 @@ library(fastDummies)
 library(sjstats)
 library(class)
 library(ROCR)
+library(car)
 
 ad = Advertisement_State
 ad
@@ -64,7 +65,7 @@ ad
 ad.df = select(ad,c(1,13,7,8,9,3,4,5,6,10,11,12))
 ad.df
 #investment and sale
-is <- ad.df[,5:8]
+is <- ad.df[,6:9]
 
 corrplot.mixed(cor(is), order = 'AOE')
 
@@ -119,10 +120,29 @@ mean_news = mean(ad.df$news_add)*0.2
 
 model_4 = glm(formula = log(sales_state) ~ order.trend+quarter_1+quarter_2+quarter_3+quarter_4+
                 State_CT+State_DL+State_MD+State_NJ+State_NY+State_PA
-                +log(news_add)+log(radio_add)+log(tv_add)
+                +log(news_add+mean_news)+log(radio_add+mean_radio)+log(tv_add+mean_tv)
               ,data = ad.df.train)
 summary(model_4)
-prediction_4 = predict(model_4, ad.df.test)
-prediction_4
 coefficients(model_4)
+lm.test1 <- lm(sales_state ~ tv_add + radio_add + news_add, data = ad.df.train)
+car::vif(lm.test1)
 
+#using coefficients
+lm(sales_state ~ radio_add, data = ad.df.train)$coefficients
+lm(sales_state ~ news_add, data = ad.df.train)$coefficients
+lm(sales_state ~ tv_add + radio_add, data = ad.df.train)$coefficients
+
+#compare the "single variable model" with "multi-variable model",
+#both coefficients of ad_radio and ad_news drop greatly
+#according to the 3 methods, these two variables are highly correlated
+
+cor(ad.df.train$radio_add, ad.df.train$news_add, method = c("pearson", "kendall", "spearman"))
+cor.test(ad.df.train$radio_add, ad.df.train$news_add, method=c("pearson", "kendall", "spearman"))
+
+cor(ad.df.train$radio_add, ad.df.train$tv_add, method = c("pearson", "kendall", "spearman"))
+cor.test(ad.df.train$radio_add, ad.df.train$tv_add, method=c("pearson", "kendall", "spearman"))
+
+cor(ad.df.train$news_add, ad.df.train$tv_add, method = c("pearson", "kendall", "spearman"))
+cor.test(ad.df.train$news_add, ad.df.train$tv_add, method=c("pearson", "kendall", "spearman"))
+
+ad.df.train = (0.255110086+)
